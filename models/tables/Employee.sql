@@ -14,6 +14,7 @@ JobTitle,
 AnnualSalary,
 Sales_Target
 from PC_FIVETRAN_DB.SQL_SERVER_DBO.employees
+where _FIVETRAN_DELETED= 'FALSE' 
 )
 
 select * from emp
