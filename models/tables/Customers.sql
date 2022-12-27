@@ -16,6 +16,7 @@ select
     Latitude,	
     Longitude 
 from PC_FIVETRAN_DB.SQL_SERVER_DBO.CUSTOMERS
+where _FIVETRAN_DELETED= 'FALSE' 
 ),
 
 -- getting count of customers count

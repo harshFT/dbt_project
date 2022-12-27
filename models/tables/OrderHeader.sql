@@ -8,6 +8,7 @@ SELECT OrderDate
       ,OrderID
       ,ShippingCompany
   FROM PC_FIVETRAN_DB.SQL_SERVER_DBO.ORDERHEADER
+  where _FIVETRAN_DELETED= 'FALSE' 
   ) ,
 
 -- get avg per shipping company for data aggregation 
