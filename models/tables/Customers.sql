@@ -22,7 +22,7 @@ where _FIVETRAN_DELETED= 'FALSE'
 
 -- getting count of customers count
  cust1 as (
-select region,count(CustomerID) as "COUNTRY WISE CUSTOMER COUNT"
+select region,count(CustomerID) as "REGION WISE CUSTOMER COUNT"
 from PC_FIVETRAN_DB.SQL_SERVER_DBO.CUSTOMERS
 where _FIVETRAN_DELETED= 'FALSE' 
 group by region
@@ -51,7 +51,7 @@ order by customerid
 
 -- join the three expresion for combine result 
  cust2 as ( 
-    select a.*,b."COUNTRY WISE CUSTOMER COUNT",C."CUSTOMER WISE PRODUCT COUNT"
+    select a.*,b."REGION WISE CUSTOMER COUNT",C."CUSTOMER WISE PRODUCT COUNT"
     from cust as a left join cust1 as b
     on a.region=b.region
     LEFT JOIN cmr as C
