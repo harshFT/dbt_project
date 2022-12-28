@@ -14,7 +14,8 @@ select
     PostalCode,	
     CountryCode	,
     Latitude,	
-    Longitude 
+    Longitude,
+    _FIVETRAN_SYNCED
 from PC_FIVETRAN_DB.SQL_SERVER_DBO.CUSTOMERS
 where _FIVETRAN_DELETED= 'FALSE' 
 ),
