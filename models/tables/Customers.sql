@@ -14,8 +14,7 @@ select
     PostalCode,	
     CountryCode	,
     Latitude,	
-    Longitude,
-    _FIVETRAN_SYNCED
+    Longitude
 from PC_FIVETRAN_DB.SQL_SERVER_DBO.CUSTOMERS
 where _FIVETRAN_DELETED= 'FALSE' 
 ),
@@ -24,7 +23,6 @@ where _FIVETRAN_DELETED= 'FALSE'
  cust1 as (
 select region,count(CustomerID) as "REGION WISE CUSTOMER COUNT"
 from PC_FIVETRAN_DB.SQL_SERVER_DBO.CUSTOMERS
-where _FIVETRAN_DELETED= 'FALSE' 
 group by region
  ),
 /*
@@ -44,7 +42,6 @@ inner join PC_FIVETRAN_DB.SQL_SERVER_DBO.ORDERHEADER as OH
 on c.CUSTOMERID=oH.customerid
 inner join PC_FIVETRAN_DB.SQL_SERVER_DBO.ORDERDETAILS as OD
 on OH.orderid=OD.ORDERID
-where _FIVETRAN_DELETED= 'FALSE' 
 group by c.customerid,c.customer
 order by customerid
 ),

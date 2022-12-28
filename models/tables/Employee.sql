@@ -12,8 +12,7 @@ Office as OFFICE_ID,
 Supervisor,
 JobTitle,
 AnnualSalary,
-Sales_Target,
-_FIVETRAN_SYNCED
+Sales_Target
 from PC_FIVETRAN_DB.SQL_SERVER_DBO.employees
 where _FIVETRAN_DELETED= 'FALSE' 
 )
