@@ -7,6 +7,7 @@ SELECT OrderDate
       ,ShippingCost
       ,OrderID
       ,ShippingCompany
+      ,_FIVETRAN_SYNCED
   FROM PC_FIVETRAN_DB.SQL_SERVER_DBO.ORDERHEADER
   where _FIVETRAN_DELETED= 'FALSE' 
   ) ,
